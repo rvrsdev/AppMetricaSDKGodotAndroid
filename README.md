@@ -1,19 +1,28 @@
-# AppMetricaSDKGodotAndroid
-AppMetrica Android SDK plugin for Godot 4 and AppMetrica 8
+# AppMetricaSDKGodotAndroid  
+AppMetrica Android SDK plugin for Godot 4 and AppMetrica 8  
 
-Contains basic functions <ins>**init**</ins>(), <ins>**reportEvent**</ins>(), <ins>**reportAppOpen**</ins>(), <ins>**reportError**</ins>(), and an additional one for sending events with parameters <ins>**reportEventWithParams**</ins>().
+Contains essential functions: **init()**, **reportEvent()**, **reportAppOpen()**, **reportError()**, and an extended version for events with parameters: **reportEventWithParams()**.  
 
-I use file system for v1 plugins **android/plugins** and **gdap file**. If you use [file system for v2 Godot plugins](https://docs.godotengine.org/en/4.4/tutorials/platform/android/android_plugin.html#packaging-a-v2-android-plugin), metrics dependencies will not be able to load into the apk (probably yandex fault).
+---
 
-Important to note that the name of gdap file must match the name of the plugin returned by the <ins>**getPluginName**</ins>() function.
+### 📁 Plugin Structure  
+- Uses **file system for v1 plugins** in folders: `android/plugins` and `gdap file`.  
+- If using [**v2 Godot plugin format**](https://docs.godotengine.org/en/4.4/tutorials/platform/android/android_plugin.html#packaging-a-v2-android-plugin), metrics dependencies may fail to load (likely a Yandex issue).  
 
-To configure your godot project, I recommend using [this documentation page](https://docs.godotengine.org/en/stable/tutorials/xr/deploying_to_android.html#deploying-to-android).
+**Important**: The `gdap` file name must match the plugin name returned by `getPluginName()` function.  
 
-Also there's [tutorial with more deeply set up of the plugin](https://kovardin.ru/articles/godot/mytacker-and-app-metrica/#%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD-appmetrica), but it's for Godot 4.2 and only in russian.
+---
 
-Example of basic initialization settings:
+### 📚 Setup Guide  
+For configuring your Godot project, refer to:  
+- [Godot Android Deployment Docs](https://docs.godotengine.org/en/stable/tutorials/xr/deploying_to_android.html#deploying-to-android)  
+- [Detailed Plugin Setup Tutorial (Russian)](https://kovardin.ru/articles/godot/mytacker-and-app-metrica/#%D0%BF%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD-appmetrica) *(for Godot 4.2)*  
 
-<pre>var metrica: Object
+---
+
+### 🧾 Example Usage  
+```gdscript
+var metrica: Object
 func _ready():
 	if Engine.has_singleton("AppMetricaSDK"):
 		metrica = Engine.get_singleton("AppMetricaSDK")
@@ -25,10 +34,14 @@ func _ready():
 		print("AppMetrica is on line")
 	else:
 		metrica.reportError("Initializing error", "AppMetrica isnt online")
-		printerr("AppMetrica isnt online")</pre>
+		printerr("AppMetrica isnt online")
+```
 
-## Preview of the script:
-<pre>package com.peerless183.appmetricasdk
+---
+
+### 📦 Plugin Code Preview  
+```kotlin
+package com.peerless183.appmetricasdk
 
 import io.appmetrica.analytics.AppMetrica
 import android.content.Context
@@ -36,7 +49,6 @@ import io.appmetrica.analytics.AppMetricaConfig
 import org.godotengine.godot.Godot
 import org.godotengine.godot.plugin.GodotPlugin
 import org.godotengine.godot.plugin.UsedByGodot
-
 
 class AppMetricaGodotPlugin(godot: Godot?) : GodotPlugin(godot) {
     private var isInitialized = false
@@ -78,7 +90,6 @@ class AppMetricaGodotPlugin(godot: Godot?) : GodotPlugin(godot) {
     fun reportError(name: String, message: String) {
         if (!isInitialized) return
 
-
         val exception = Exception(message)
         AppMetrica.reportError(name, message, exception)
     }
@@ -94,4 +105,11 @@ class AppMetricaGodotPlugin(godot: Godot?) : GodotPlugin(godot) {
         )
         AppMetrica.reportEvent(name, params)
     }
-}</pre>
+}
+```
+
+---
+
+### 📌 Notes  
+1. **reportEvent** and **reportEventWithParams** are **template functions** demonstrating how to create custom event-logging methods.  
+2. I do not recommend using AppMetrica as a metrics service for production. Consider using [GameAnalytics](https://www.gameanalytics.com/) for better reliability and features.
