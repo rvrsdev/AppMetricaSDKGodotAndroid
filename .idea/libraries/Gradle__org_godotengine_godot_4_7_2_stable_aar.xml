@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: org.godotengine:godot:4.7.2.stable@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/8.13/transforms/75f49607ec1091c8b8439f1b172831f5/transformed/godot-4.7.2.stable/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.13/transforms/75f49607ec1091c8b8439f1b172831f5/transformed/godot-4.7.2.stable/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.13/transforms/75f49607ec1091c8b8439f1b172831f5/transformed/godot-4.7.2.stable/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.godotengine/godot/4.7.2.stable/5a6ac4a3540efa585a214a9fbba5a6cc1529f3b2/godot-4.7.2.stable-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.godotengine/godot/4.7.2.stable/7047d0c4a3c7940de3819a93901522464ddd5b2a/godot-4.7.2.stable-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

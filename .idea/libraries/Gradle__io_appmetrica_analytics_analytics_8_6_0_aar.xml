@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: io.appmetrica.analytics:analytics:8.6.0@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/8.13/transforms/cb52d9a0dd467c8fe08253d5731dd63e/transformed/analytics-8.6.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.13/transforms/cb52d9a0dd467c8fe08253d5731dd63e/transformed/analytics-8.6.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

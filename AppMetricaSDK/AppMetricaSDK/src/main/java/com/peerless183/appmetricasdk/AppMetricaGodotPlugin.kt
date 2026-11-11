@@ -21,14 +21,13 @@ class AppMetricaGodotPlugin(godot: Godot?) : GodotPlugin(godot) {
         val currentActivity = activity ?: return
         if (godot == null) return
 
-        config = AppMetricaConfig.newConfigBuilder(apiKey).withSessionsAutoTrackingEnabled(true)
-            .withLocationTracking(false)
+        config = AppMetricaConfig.newConfigBuilder(apiKey).withSessionsAutoTrackingEnabled(true).withLocationTracking(false).withLogs()
 
         AppMetrica.activate(currentActivity.applicationContext, config.build())
         AppMetrica.setAdvIdentifiersTracking(true)
         AppMetrica.resumeSession(currentActivity)
         isInitialized = true
-    }
+        }
 
     @UsedByGodot
     fun reportAppOpen() {
@@ -45,8 +44,8 @@ class AppMetricaGodotPlugin(godot: Godot?) : GodotPlugin(godot) {
     }
 
     @UsedByGodot
-    fun reportError(name: String, message: String) {
-        if (!isInitialized) return
+    fun reportError(name: String, message: String){
+        if(!isInitialized) return
 
 
         val exception = Exception(message)

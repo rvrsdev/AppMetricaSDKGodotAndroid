@@ -4,4 +4,5 @@ binary_type="local"
 binary="AppMetricaSDK-release.aar"
 
 [dependencies]
-remote=["io.appmetrica.analytics:analytics:7.14.0"]
+remote=["io.appmetrica.analytics:analytics:8.6.0"]
+remote_exclude=["io.appmetrica.analytics:analytics-location"]

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AppMetricaSDKGodot.iml" filepath="$PROJECT_DIR$/.idea/AppMetricaSDKGodot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppMetricaSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/AppMetricaSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppMetricaSDK/AppMetricaSDK.AppMetricaSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/AppMetricaSDK/AppMetricaSDK.AppMetricaSDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppMetricaSDK/AppMetricaSDK.AppMetricaSDK.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/AppMetricaSDK/AppMetricaSDK.AppMetricaSDK.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppMetricaSDK/AppMetricaSDK.AppMetricaSDK.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AppMetricaSDK/AppMetricaSDK.AppMetricaSDK.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AppMetricaSDK/AppMetricaSDK.AppMetricaSDK.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/AppMetricaSDK/AppMetricaSDK.AppMetricaSDK.unitTest.iml" />
     </modules>
   </component>
 </project>
